@@ -1,0 +1,141 @@
+<%- include("./partials/header") %>
+
+    <section id="home" class="home-main">
+        <div class="home-container">
+            <div class="home-left-container">
+                <h1 class="title">Marius Dervinis <span><br><a class="typewrite" data-period="2000" data-type='[ "Creating beautiful websites", "HTML, CSS, JavaScript", "Creator, Inovator, Problem Solver" ]'>
+                <span class="wrap"></span>
+                    </a>
+                    </span>
+                </h1>
+            </div>
+            <div class="home-right-container">
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <section id="about" class="home-about ">
+
+            <div class="home-about-textbox container-box ">
+                <h1>About Me</h1>
+                <img src="/images/profile.jpg" alt="profile img ">
+                <h2>Web Developer & Designer.</h2>
+                <p>Hello!<br>I'm a passionate Front-End Developer with a touch of Backend. I focus on a simple and responsive user experience keeping the design on the highest level possible. I work with HTML, CSS, Javascript, NodeJS technologies. </p>
+            </div>
+    </div>
+    <div class="skills-container">
+        <div class="skills-item">
+            <div class="skills-icon"><i class="fas fa-laptop-code fa-3x"></i></div>
+            <div class="skills-text">
+                <h5>Web development</h5>
+                <p>Able to create beautiful sites by using html css js</p>
+            </div>
+        </div>
+        <div class="skills-item">
+            <div class="skills-icon"><i class="fas fa-mobile-alt fa-3x"></i></div>
+            <div class="skills-text">
+                <h5>Responsive design</h5>
+                <p>Able to create mobile responsive sites at a professional level</p>
+            </div>
+        </div>
+        <div class="skills-item">
+            <div class="skills-icon"><i class="fas fa-paint-brush fa-3x"></i></div>
+            <div class="skills-text">
+                <h5>Graphics editor</h5>
+                <p>Can use graphics editing software to make and edit quality pictures</p>
+            </div>
+        </div>
+        <div class="skills-item">
+            <div class="skills-icon"><i class="fas fa-headset fa-3x"></i></div>
+            <div class="skills-text">
+                <h5>Strong Support</h5>
+                <p>Able to communicate ideas in a brief way</p>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section id="projects" class="portfolio">
+        <h1>My Projects</h1>
+
+        <!-- portfolio item 01 -->
+        <figure class="port-item ">
+            <img src="/images/ginas.jpg " alt="portfolio item ">
+            <figcaption class="port-desc ">
+                <p>Gina's Cleaning Services</p>
+                <a class="button button-accent button-small button-trigger">Project details</a>
+                <a href="http://ginascleaningservices.co.uk/" target="_blank" class="button button-accent button-small ">Show Live</a>
+            </figcaption>
+        </figure>
+        <!-- portfolio item 05 -->
+        <figure class="port-item ">
+            <img src="/images/techiebee.jpg" alt="portfolio item ">
+            <figcaption class="port-desc ">
+                <p>Techiebee</p>
+                <a class="button button-accent button-small button-trigger">Project details</a>
+                <a href="http://ginascleaningservices.co.uk/" target="_blank" class="button button-accent button-small ">Show Live</a>
+                <!-- <a class="button button-accent button-small button-trigger">Project details</a>
+                <a href="https://techiebee.herokuapp.com/" class="button button-accent button-small ">Show Live</a> -->
+            </figcaption>
+        </figure>
+        <!-- portfolio item 03 -->
+        <figure class="port-item ">
+            <img src="/images/pvpon.jpg" alt="portfolio item ">
+            <figcaption class="port-desc ">
+                <p>PVPON</p>
+                <a class="button button-accent button-small button-trigger">Project details</a>
+                <a href="https://www.pvpon.eu/" target="_blank" class="button button-accent button-small ">Show Live</a>
+            </figcaption>
+        </figure>
+        <!-- portfolio item 04 -->
+        <figure class="port-item ">
+            <img src="/images/yelpcamp.jpg" alt="portfolio item ">
+            <figcaption class="port-desc ">
+                <p>YelpCamp</p>
+                <a class="button button-accent button-small button-trigger">Project details</a>
+                <a href="https://marius-dervinis-yelpcamp.herokuapp.com/" target="_blank" class="button button-accent button-small ">Show Live</a>
+            </figcaption>
+        </figure>
+        <!-- portfolio item 05 -->
+        <figure class="port-item ">
+            <img src="/images/colorpickgame.jpg" alt="portfolio item ">
+            <figcaption class="port-desc ">
+                <p>Color Guess (Game)</p>
+                <a class="button button-accent button-small button-trigger">Project details</a>
+                <a href="https://pick-the-color-game.herokuapp.com/" target="_blank" class="button button-accent button-small ">Show Live</a>
+            </figcaption>
+        </figure>
+        <!-- portfolio item 06 -->
+        <figure class="port-item ">
+            <img src="/images/todolist.jpg " alt="portfolio item ">
+            <figcaption class="port-desc ">
+                <p>TO-DO List</p>
+                <a class="button button-accent button-small button-trigger">Project details</a>
+                <a href="https://marius-to-do-list.herokuapp.com/" target="_blank" class="button button-accent button-small ">Show Live</a>
+            </figcaption>
+        </figure>
+    </section>
+    <section id="contact" class="contact">
+        <div class="container ">
+            <h1 class="title title-contact ">Like what you see?<br>
+                <span>Then what are you waiting for?</span>
+            </h1>
+        </div>
+
+        <%- include("./utils/mailer") %>
+    </section>
+
+    <!-- modals -->
+    <!-- Trigger/Open The Modal -->
+
+    <%- include("./modals/project1") %>
+        <%- include("./modals/project2") %>
+            <%- include("./modals/project3") %>
+                <%- include("./modals/project4") %>
+                    <%- include("./modals/project5") %>
+                        <%- include("./modals/project6") %>
+
+
+
+
+
+                            <%- include("./partials/footer") %>
