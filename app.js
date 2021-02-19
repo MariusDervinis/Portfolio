@@ -16,7 +16,7 @@ let transporter = nodemailer.createTransport({
     port: 465,
     auth: {
         user: process.env.EMAILUSER,
-        pass: process.env.PASS,
+        pass: process.env.EMAILPASS,
     },
     tls: {
         rejectUnauthorized: false
