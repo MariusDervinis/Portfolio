@@ -109,8 +109,6 @@ function setDataIndex() {
     }
 }
 
-
-
 for (i = 0; i < modal_button.length; i++) {
     modal_button[i].onclick = function() {
         var ElementIndex = this.getAttribute('data-index');
@@ -137,3 +135,7 @@ window.onclick = function(event) {
 
 
 };
+
+function goBack() {
+    window.history.back();
+}
