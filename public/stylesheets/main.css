@@ -827,7 +827,7 @@ textarea {
     z-index: 3;
     bottom: 0em;
     left: 0em;
-    right: 1.1em;
+    right: 0em;
     color: white;
     background: rgba(0, 0, 0, .6);
     padding: 2em;
