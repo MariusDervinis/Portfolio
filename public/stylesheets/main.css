@@ -263,7 +263,7 @@ nav a:focus {
 =================== */
 
 .home-main {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/profile-bg.jpg");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/profile-bg.webp");
     /* background: linear-gradient(50deg, rgba(241, 244, 247, 0.39) 30%, rgba(178, 179, 255, 0.486) 65%, rgba(10, 14, 245, 0.452) 100%);
     background-color: rgba(0, 90, 150, 0.623); */
     background-size: cover;
@@ -322,7 +322,7 @@ nav a:focus {
         font-size: 2.5rem;
     }
     .home-about {
-        background-image: url("/images/hero-bg.jpg");
+        background-image: url("/images/hero-bg.webp");
         background-repeat: no-repeat;
         padding-bottom: 20em;
     }
@@ -547,7 +547,7 @@ footer p,
         position: fixed;
         text-align: center;
         width: 165px;
-        margin: -50px 0 0 -20px;
+        margin: -50px 0 0 -40px;
         padding: 1em;
         padding-right: -15em;
         background: #232323;
@@ -680,7 +680,7 @@ footer p,
     justify-self: center;
 }
 
-.skills-text h5 {
+.skills-text h2 {
     margin: unset;
     padding: 0.2em;
 }
