@@ -311,6 +311,12 @@ nav a:focus {
     }
 }
 
+@media (min-width: 35rem) {
+    .home-about {
+        padding-bottom: 2em;
+    }
+}
+
 @media (min-width: 60rem) {
     h1 {
         font-size: 2.5rem;
@@ -318,7 +324,7 @@ nav a:focus {
     .home-about {
         background-image: url("/images/hero-bg.jpg");
         background-repeat: no-repeat;
-        padding-bottom: 10em;
+        padding-bottom: 20em;
     }
     .home-about-textbox img {
         position: absolute;
@@ -329,7 +335,7 @@ nav a:focus {
     }
     .home-about-textbox {
         width: 50%;
-        padding: 7em;
+        padding: 5em;
         outline-offset: -3.75em;
         margin-left: -2.5%;
         text-align: left;
@@ -349,6 +355,7 @@ nav a:focus {
 
 .portfolio {
     margin: auto;
+    width: 95%;
 }
 
 .port-item {
@@ -401,7 +408,7 @@ nav a:focus {
 =================== */
 
 .contact {
-    background-color: #39e8ff;
+    /* background-color: #39e8ff; */
     padding: 3em 1em 3em;
 }
 
@@ -620,7 +627,7 @@ footer p,
 }
 
 .skills-container {
-    max-width: 50em;
+    max-width: 55em;
     display: grid;
     grid-template-columns: auto;
     padding: 2em;
