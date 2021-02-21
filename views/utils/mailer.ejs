@@ -1,6 +1,24 @@
-<form action="/sendmail" method="POST" autocomplete="off">
-    <input name="name" type="text" class="feedback-input" placeholder="Name" required/>
-    <input name="email" type="email" class="feedback-input" placeholder="Email" required />
-    <textarea name="text" class="feedback-input" placeholder="Comment" required></textarea>
-    <button type="submit" name="send_mail" class="button button-dark ">Contact</button>
-</form>
+<% if (locals.flash){ %>
+    <div class="container ">
+        <h1 class="title title-contact ">Thank you!<br>
+            <span>Thank you for your submition, you will be contacted shortly!</span>
+        </h1>
+    </div>
+    <form>
+        <input name="name" type="text" class="feedback-input" placeholder=<%=name%> disabled/>
+        <input name="email" type="email" class="feedback-input" placeholder=<%=email%> disabled />
+        <textarea name="text" class="feedback-input" placeholder=<%=message%> disabled></textarea>
+        <button id="messageBox" type="submit" disabled name="send_mail" class="button button-dark "><%=flash%></button>
+    </form>
+    <% } else { %>
+        <div class="container ">
+            <h1 class="title title-contact ">Like what you see?<br>
+                <span>Then what are you waiting for?</span>
+            </h1>
+        </div>
+        <form action="/sendmail" method="POST" autocomplete="off">
+            <input name="name" type="text" class="feedback-input" placeholder="Name" required/>
+            <input name="email" type="email" class="feedback-input" placeholder="Email" required />
+            <textarea name="text" class="feedback-input" placeholder="Comment" required></textarea>
+            <button type="submit" name="send_mail" class="button button-dark ">Contact</button></form>
+        <%  } %>

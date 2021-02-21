@@ -35,26 +35,30 @@ var indexRoutes = require("./routes/index");
 
 //ROUTER
 app.use("/", indexRoutes);
+
 app.post('/sendmail', (req, res) => {
 
-    let to_email = req.body.email;
+    let name = req.body.name;
+    let email = req.body.email;
     let message = req.body.text;
 
 
     let messageOptions = {
-        from: 'Portfolio Email Contact',
-        to: to_email,
-        subject: "asd",
+        from: name,
+        to: email,
+        subject: "Portfolio Email Contact",
         html: message
     };
 
-
     transporter.sendMail(messageOptions, (error, info) => {
         if (error) {
-            return console.log(error);
+            var flash = "error";
+            console.log(error);
+        } else {
+            var flash = "success";
+            console.log('Message %s sent: %s', info.messageId, info.response);
         }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-        res.redirect('/');
+        res.render("index", { flash: flash, name: name, email, email, message: message })
     });
 });
 

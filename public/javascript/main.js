@@ -72,6 +72,60 @@ TxtType.prototype.tick = function() {
     }, delta);
 };
 
+
+//MODALS
+// Get body elements
+var main_body = document.querySelector("body");
+var modal_body = document.getElementsByClassName("modal-body");
+// Get the button that opens the modal
+var modal_button = document.getElementsByClassName("button-trigger");
+// Get the <span> element that closes the modal
+var modal_close = document.getElementsByClassName("modal-close");
+// Get the button that goes back from the modal
+var modal_back = document.getElementsByClassName("modal-back");
+// When the user clicks the button, open the modal
+
+function setDataIndex() {
+    for (i = 0; i < modal_button.length; i++) {
+        modal_button[i].setAttribute('data-index', i);
+        modal_body[i].setAttribute('data-index', i);
+        modal_close[i].setAttribute('data-index', i);
+        modal_back[i].setAttribute('data-index', i);
+    }
+}
+for (i = 0; i < modal_button.length; i++) {
+    modal_button[i].onclick = function() {
+        var ElementIndex = this.getAttribute('data-index');
+        modal_body[ElementIndex].classList.add("show");
+        main_body.classList.add("modal-active");
+    };
+    // When the user clicks on <span> (x), close the modal
+    modal_close[i].onclick = function() {
+        var ElementIndex = this.getAttribute('data-index');
+        modal_body[ElementIndex].classList.remove("show");
+        main_body.classList.remove("modal-active");
+    };
+    // Back button from modal
+    modal_back[i].onclick = function() {
+        var ElementIndex = this.getAttribute('data-index');
+        modal_body[ElementIndex].classList.remove("show");
+        main_body.classList.remove("modal-active");
+    }
+}
+
+
+window.onclick = function(event) {
+    if (event.target === modal_body[event.target.getAttribute('data-index')]) {
+        modal_body[event.target.getAttribute('data-index')].style.display = "none";
+    }
+};
+
+function ScrollToMessageBox() {
+    var elmnt = document.getElementById("messageBox");
+    if (elmnt) { elmnt.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+};
+
+
 window.onload = function() {
     var elements = document.getElementsByClassName('typewrite');
     for (var i = 0; i < elements.length; i++) {
@@ -86,56 +140,6 @@ window.onload = function() {
     css.type = "text/css";
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
-};
-
-
-
-var modal_body = document.getElementsByClassName("modal-body");
-
-// Get the button that opens the modal
-
-var modal_button = document.getElementsByClassName("button-trigger");
-
-// Get the <span> element that closes the modal
-var modal_close = document.getElementsByClassName("modal-close");
-
-// When the user clicks the button, open the modal
-function setDataIndex() {
-
-    for (i = 0; i < modal_button.length; i++) {
-        modal_button[i].setAttribute('data-index', i);
-        modal_body[i].setAttribute('data-index', i);
-        modal_close[i].setAttribute('data-index', i);
-    }
-}
-
-for (i = 0; i < modal_button.length; i++) {
-    modal_button[i].onclick = function() {
-        var ElementIndex = this.getAttribute('data-index');
-        modal_body[ElementIndex].style.display = "block";
-    };
-
-    // When the user clicks on <span> (x), close the modal
-    modal_close[i].onclick = function() {
-        var ElementIndex = this.getAttribute('data-index');
-        modal_body[ElementIndex].style.display = "none";
-    };
-
-}
-
-window.onload = function() {
-
+    ScrollToMessageBox()
     setDataIndex();
 };
-
-window.onclick = function(event) {
-    if (event.target === modal_body[event.target.getAttribute('data-index')]) {
-        modal_body[event.target.getAttribute('data-index')].style.display = "none";
-    }
-
-
-};
-
-function goBack() {
-    window.history.back();
-}

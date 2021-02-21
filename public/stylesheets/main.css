@@ -5,9 +5,12 @@
 }
 
 body {
-    margin: 0;
     font-family: 'Barlow', sans-serif;
     text-align: center;
+}
+
+.modal-active {
+    overflow: hidden;
 }
 
 img {
@@ -256,7 +259,7 @@ nav a:focus {
 }
 
 
-/* hero-home
+/* Home
 =================== */
 
 .home-main {
@@ -268,10 +271,6 @@ nav a:focus {
     color: #FFF;
     padding-bottom: 6em;
 }
-
-
-/* hero-home
-=================== */
 
 .home-about-textbox {
     background-color: #232323;
@@ -739,25 +738,42 @@ textarea {
 /* Modals */
 
 .modal {
-    display: none;
     /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 5;
-    /* Sit on top */
-    /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s linear;
+}
+
+.modal.show {
+    position: fixed;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.2s, opacity 0.2s linear;
+}
+
+.modal div {
+    visibility: hidden;
+    transform: translateY(35em);
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s, transform 0.3s linear;
+}
+
+.modal.show div {
+    visibility: visible;
+    transform: translateY(0em);
+    opacity: 1;
+    transition: visibility 0.3s, opacity 0.3s, transform 0.3s linear;
 }
 
 
@@ -775,6 +791,7 @@ textarea {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
+    /*  */
 }
 
 .technologies {
@@ -806,11 +823,11 @@ textarea {
 
 .modal-link {
     display: block;
-    position: absolute;
+    position: fixed;
     z-index: 3;
     bottom: 0em;
     left: 0em;
-    right: 0em;
+    right: 1.1em;
     color: white;
     background: rgba(0, 0, 0, .6);
     padding: 2em;
@@ -830,7 +847,7 @@ textarea {
 .close {
     color: #aaaaaa;
     float: right;
-    font-size: 80px;
+    font-size: 3em;
     font-weight: bold;
 }
 
