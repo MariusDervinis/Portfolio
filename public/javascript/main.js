@@ -121,7 +121,7 @@ window.onclick = function(event) {
 };
 
 function ScrollToMessageBox() {
-    var elmnt = document.getElementById("contact");
+    var elmnt = document.getElementById("messageBox");
     if (elmnt) { elmnt.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
 };
 
