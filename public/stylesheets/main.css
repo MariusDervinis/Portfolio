@@ -741,6 +741,10 @@ textarea {
     background: #CC4949;
 }
 
+form label {
+    display: none;
+}
+
 
 /* Modals */
 
