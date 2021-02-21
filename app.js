@@ -45,9 +45,9 @@ app.post('/sendmail', (req, res) => {
 
     let messageOptions = {
         from: name,
-        to: email,
+        to: process.env.EMAILUSER,
         subject: "Portfolio Email Contact",
-        html: message
+        html: `Name: ${name}<br>Email: ${email}<br><p>${message}</p>`
     };
 
     transporter.sendMail(messageOptions, (error, info) => {

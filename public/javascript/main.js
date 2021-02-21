@@ -1,7 +1,7 @@
 // Scrolling animation
 $(document).on('click', '.menu-items a, .scrollto', function(e) {
     var target = $(this.hash);
-    var scrollto = target.offset().top - 120;
+    var scrollto = target.offset().top - 20;
     $('html,body').animate({
 
             scrollTop: scrollto
@@ -21,7 +21,7 @@ $(function() {
 $(window).scroll(function() {
     var scrollDistance = $(window).scrollTop();
     $('section').each(function(i) {
-        if ($(this).position().top <= scrollDistance + 200) {
+        if ($(this).position().top <= scrollDistance + 80) {
             $('.menu-items .active').removeClass('active');
             $('.menu-items a').eq(i).addClass('active');
         }
