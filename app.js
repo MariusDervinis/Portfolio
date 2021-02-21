@@ -44,7 +44,8 @@ app.post('/sendmail', (req, res) => {
 
 
     let messageOptions = {
-        from: name,
+        from: email,
+        name: name,
         to: process.env.EMAILUSER,
         subject: "Portfolio Email Contact",
         html: `Name: ${name}<br>Email: ${email}<br><p>${message}</p>`
