@@ -1,10 +1,10 @@
 <% if (locals.flash){ %>
     <div class="container ">
         <h1 class="title title-contact">Thank you!<br>
-            <span>Thank you for your submition, you will be contacted shortly!</span>
+            <span id="messageBox">Thank you for your submition, you will be contacted shortly!</span>
         </h1>
     </div>
-    <form id="messageBox">
+    <form>
         <input name="name" type="text" class="feedback-input" placeholder=<%=name%> disabled></input><label for="name">What's your name?</label>
         <input name="email" type="email" class="feedback-input" placeholder=<%=email%> disabled></input><label for="email">Your email address</label>
         <textarea name="text" class="feedback-input" placeholder=<%=message%> disabled></textarea><label for="text">Any useful information you would like me to know</label>
