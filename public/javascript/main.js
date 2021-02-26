@@ -1,7 +1,7 @@
 // Scrolling animation
 $(document).on('click', '.menu-items a, .scrollto', function(e) {
     var target = $(this.hash);
-    var scrollto = target.offset().top - 80;
+    var scrollto = target.offset().top - 50;
     $('html,body').animate({
 
             scrollTop: scrollto
@@ -54,7 +54,7 @@ TxtType.prototype.tick = function() {
     this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
     var that = this;
-    var delta = 200 - Math.random() * 100;
+    var delta = 140 - Math.random() * 100;
 
     if (this.isDeleting) { delta /= 2; }
 
@@ -121,8 +121,8 @@ window.onclick = function(event) {
 };
 
 function ScrollToMessageBox() {
-    var elmnt = document.getElementById("messageBox");
-    if (elmnt) { elmnt.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    var elmnt = document.getElementById("contact");
+    if (elmnt.classList.contains("submitted")) { elmnt.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
 };
 
 
