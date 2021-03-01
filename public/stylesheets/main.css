@@ -542,6 +542,7 @@ footer p,
 
 #menuToggle {
     margin: 1em;
+    right: 0;
     display: block;
     position: fixed;
     z-index: 4;
@@ -564,7 +565,7 @@ footer p,
     height: 32px;
     position: fixed;
     top: 10px;
-    left: 14px;
+    right: 13px;
     cursor: pointer;
     opacity: 0;
     /* hide this */
@@ -654,15 +655,14 @@ footer p,
         position: fixed;
         text-align: center;
         width: 165px;
-        margin: -50px 0 0 -40px;
+        margin: -50px 0 0 -132px;
         padding: 1em;
-        padding-right: -15em;
         background: #232323bd;
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
         /* to stop flickering of text in safari */
         transform-origin: 0% 0%;
-        transform: translate(-100%, 0);
+        transform: translate(100%, 0);
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     }
 }
@@ -911,6 +911,7 @@ form label {
 .modal-image {
     margin-top: 1em;
     margin-bottom: 3em;
+    border-radius: 14px;
 }
 
 .modal-wrap {
