@@ -36,6 +36,10 @@ var indexRoutes = require("./routes/index");
 //ROUTER
 app.use("/", indexRoutes);
 
+app.get("/resume", (req, res) => {
+    res.render("resume")
+});
+
 app.post('/sendmail', (req, res) => {
 
     let name = req.body.name;
