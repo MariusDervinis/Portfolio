@@ -1,17 +1,24 @@
 // Scrolling animation
-$(document).on('click', '.menu-items a, .scrollto', function(e) {
-    var target = $(this.hash);
-    var scrollto = target.offset().top - 50;
-    $('html,body').animate({
+$(document).on('click', '.menu-items .item, .scrollto', function(e) {
+    if (this) {
+        console.log(this, "exists")
+        var target = $(this.hash);
+        var scrollto = target.offset().top - 50;
+        $('html,body').animate({
 
-            scrollTop: scrollto
-        },
-        'slow');
+                scrollTop: scrollto
+            },
+            'slow');
+    } else {
+        console.log("unknown")
+    }
+
+
 });
 
 $(function() {
-    $('.menu-items a').filter(function() { return this.href == location.href }).parent().addClass('active').siblings().removeClass('active')
-    $('.menu-items a').click(function() {
+    $('.menu-items .item').filter(function() { return this.href == location.href }).parent().addClass('active').siblings().removeClass('active')
+    $('.menu-items .item').click(function() {
         $(this).parent().addClass('active').siblings().removeClass('active')
     })
 })
@@ -23,7 +30,7 @@ $(window).scroll(function() {
     $('section').each(function(i) {
         if ($(this).position().top <= scrollDistance + 160) {
             $('.menu-items .active').removeClass('active');
-            $('.menu-items a').eq(i).addClass('active');
+            $('.menu-items .item').eq(i).addClass('active');
         }
     });
 }).scroll();
