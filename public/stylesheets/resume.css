@@ -107,13 +107,10 @@ section {
     top: 4px;
 }
 
-.item-title {
-    color: #009DFF;
-}
-
 .item {
     padding-bottom: 0.2em;
     margin-top: 0.5em;
+    color: #009DFF;
 }
 
 .item-info {
@@ -121,7 +118,7 @@ section {
     color: #232323;
 }
 
-.item-info:hover {
+.item-title a:hover {
     text-decoration: underline;
     color: #009DFF;
 }
