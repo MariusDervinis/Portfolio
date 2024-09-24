@@ -1,0 +1,29 @@
+<% if (locals.flash){ %>
+    <section id="contact" class="contact submitted">
+        <div class="container submitted">
+            <h1 class="title title-contact">Thank you!<br>
+                <span>Thank you for your submition, you will be contacted shortly!</span>
+            </h1>
+        </div>
+        <form>
+            <input name="name" type="text" class="feedback-input" placeholder=<%=name%> disabled></input><label for="name">What's your name?</label>
+            <input name="email" type="email" class="feedback-input" placeholder=<%=email%> disabled></input><label for="email">Your email address</label>
+            <textarea name="text" class="feedback-input" placeholder=<%=message%> disabled></textarea><label for="text">Any useful information you would like me to know</label>
+            <button type="submit" disabled name="send_mail" class="button button-dark "><%=flash%></button>
+        </form>
+    </section>
+    <% } else { %>
+        <section id="contact" class="contact">
+            <div class="container ">
+                <h1 class="title title-contact ">Like what you see?<br>
+                    <span>Then let's get in touch!</span>
+                </h1>
+            </div>
+            <form action="/sendmail" method="POST" autocomplete="off">
+                <input name="name" type="text" class="feedback-input" placeholder="Name" required></input><label for="name">What's your name?</label>
+                <input name="email" type="email" class="feedback-input" placeholder="Email" required></input><label for="email">Your email address</label>
+                <textarea name="text" class="feedback-input" placeholder="Comment" required></textarea><label for="text">Any useful information you would like me to know</label>
+                <button type="submit" name="send_mail" class="button button-dark ">Contact</button>
+            </form>
+        </section>
+        <%  } %>
